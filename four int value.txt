@@ -1,0 +1,22 @@
+using System;
+namespace sg
+{
+    class Program
+    {
+        static void Main(String[] args)
+        {
+            int a,b,c,d,result;
+            Console.WriteLine("Enter number 1 :");
+            a=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Number 2 :");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Number 3 :");
+            c= Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter number  4 :");
+            d= Convert.ToInt32(Console.ReadLine());
+            result = a*b*c*d;
+            Console.WriteLine("Ans : "+result);
+
+        }
+    }
+}

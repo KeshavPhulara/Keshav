@@ -1,0 +1,21 @@
+using System;
+namespace sg
+{
+    class Program
+    {
+        static void Main(String[] args)
+        {
+            string a = "Advanced Web Programming";
+            string b ="Practical";
+            Console.WriteLine("Original String :"+a);
+            Console.WriteLine("Length of string :"+a.Length);
+            Console.WriteLine("UpperCase :"+a.ToUpper());
+            Console.WriteLine(" lowerCase of String :"+a.ToLower());
+            String cat =string.Concat(a,b);
+            Console.WriteLine("Concatebation:"+cat);
+            Console.WriteLine("Replacing String :"+a.Replace("Advanced","Basics"));
+
+
+        }
+    }
+}
