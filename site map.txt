@@ -1,0 +1,49 @@
+Webform1.aspx:
+Code:
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WebForm1.aspx.vb" Inherits="WebApplication8.WebForm1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:SiteMapPath ID="SiteMapPath1" runat="server" ParentLevelsDisplayed="1">
+    </asp:SiteMapPath>
+        
+        </asp:SiteMapPath>
+       <H1> HELLO</H1>
+    </form>
+</body>
+</html>
+
+Webform2.aspx:
+Code:
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WebForm2.aspx.vb" Inherits="WebApplication8.WebForm2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathDirection="CurrentToRoot">
+    </asp:SiteMapPath>
+      <h1>How are you?</h1>
+        
+    </form>
+</body>
+</html>
+
+
+Web.sitemap:
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="WebForm1.aspx" title="Home"  description="">
+        <siteMapNode url="WebForm2.aspx" title="First"  description="" />
+    </siteMapNode>
+</siteMap>

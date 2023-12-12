@@ -1,0 +1,33 @@
+Default.aspx
+<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeBehind="Default.aspx.cs" Inherits="WebApplication10._Default" %>
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    Name :
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <br />
+    <br />
+    <asp:Button ID="Button1" runat="server" onclick="Button1_Click" 
+        Text="Submitte" />
+    <br />
+    <br />
+    <asp:Label ID="Label1" runat="server"></asp:Label>
+    <br />
+</asp:Content>
+
+Default.aspx.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace WebApplication10
+{ public partial class _Default : System.Web.UI.Page
+    {  protected void Page_Load(object sender, EventArgs e)
+        {}
+        protected void Button1_Click(object sender, EventArgs e)
+        { Label1.Text = "Your Name Is" + TextBox1.Text;}
+}
+}
