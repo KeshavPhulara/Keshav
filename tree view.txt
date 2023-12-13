@@ -1,0 +1,72 @@
+CODE:
+a) Treeview control and datalist 
+b) Treeview operations
+Default.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="W.aspx.cs" 
+Inherits="tree.WebForm1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ <title></title>
+</head>
+<body>
+ <form id="form1" runat="server">
+ <div>
+ <asp:TreeView ID="TreeView1" runat="server" 
+OnSelectedNodeChanged="TreeView1_SelectedNodeChanged" 
+OnTreeNodeCollapsed="TreeView1_TreeNodeCollapsed">
+ <Nodes>
+ <asp:TreeNode Text="Course" Value="Course" Checked="True" 
+ShowCheckBox="True"> 
+ <asp:TreeNode Text="I.T." Value="AI" Checked="True" 
+ShowCheckBox="True"></asp:TreeNode>
+ <asp:TreeNode Text="C.S." Value="C.S." Checked="True" 
+ShowCheckBox="True"></asp:TreeNode>
+IT21015 TY BSC_IT ADVANCED WEB PROGRAMMING PRACTICAL DATE : 21/8/23
+ <asp:TreeNode Text="BCom" Value="BCom" Checked="True" 
+ShowCheckBox="True"></asp:TreeNode>
+ <asp:TreeNode Text="BAF" Value="BAF" Checked="True" 
+ShowCheckBox="True"></asp:TreeNode>
+ <asp:TreeNode Text="BSc" Value="BSc" Checked="True" 
+ShowCheckBox="True"></asp:TreeNode>
+ </asp:TreeNode> 
+ </Nodes>
+ </asp:TreeView>
+ </div>
+ <asp:DataList ID="DataList1" runat="server">
+ <ItemTemplate>
+ <%# Eval("value") %>
+ </ItemTemplate>
+ </asp:DataList>
+ <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+ </form>
+</body>
+</html>
+Default.aspx.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+IT21015 TY BSC_IT ADVANCED WEB PROGRAMMING PRACTICAL DATE : 21/8/23
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace tree
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ protected void Page_Load(object sender, EventArgs e)
+ { }
+ protected void Button1_Click(object sender, EventArgs e)
+ {
+ TreeNodeCollection T;
+ T = TreeView1.CheckedNodes;
+ DataList1.DataSource = T;
+ DataList1.DataBind();
+ DataList1.Visible = true;
+ }
+ protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
+ {
+ Response.Write("You have selected the option:" + TreeView1.SelectedValue);
+ }
+ protected void TreeView1_TreeNodeCollapsed(object sender, TreeNodeEventArgs e)
+ { Response.Write("The value Collapsed was: " + e.Node.Value);} } }
